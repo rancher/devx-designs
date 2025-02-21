@@ -51,6 +51,63 @@ All container images / OCI artifacts can be stored centrally by the organization
 in SUSE Private Registry, with base images and supporting applications coming
 from SUSE Registry and SUSE Application Collection. 
 
+### Choose and Mirror Trusted Images 
+
+```mermaid
+sequenceDiagram
+    actor pe as Platform Eng 
+    participant reg as "SUSE Private Registry"
+    participant appco as "SUSE Application Collection"
+    participant sr as "SUSE Registry"
+    %% participant git as "Gitea"
+    %% participant act as "Gitea Action" 
+    reg<<->>appco: mirror approved images
+    reg<<->>sr: mirror approved images
+```
+
+### App Project Setup
+
+```mermaid
+sequenceDiagram
+    actor dev as Dev Lead
+    participant git as "Gitea"
+    participant rd as "Rancher Desktop"
+    participant reg as "SUSE Private Registry"
+    %% participant act as "Gitea Action" 
+    dev->>git: create repo
+    reg->>dev: pull BCI
+    dev->>rd: build devcontainer
+    dev->>reg: push devcontainer 
+    dev->>git: commit .decontainer config
+```
+
+### Full GitApps Sequence
+
+```mermaid
+sequenceDiagram
+    actor dev as Developer
+    participant ide as IDE
+    participant rd as "Rancher Desktop"
+    participant git as "Gitea"
+    participant act as "Gitea Action" 
+    participant reg as "SUSE Private Registry"
+    %% participant appco as "SUSE Application Collection"
+    %% participant sr as "SUSE Registry"
+    participant fleet as "Fleet"
+    participant rke as "RKE2"
+    git->>ide: checkout project
+    dev<<->>ide: inner Loop
+    ide<<->>rd: run dev container
+    dev<<->>rd: preview & test
+    ide->>git: commit and tag
+    git->>act: trigger build
+    act->>reg: save app image 
+    act->>reg: save Helm chart 
+    reg<<->>fleet: trigger update or deploy
+    fleet<<->>rke: deploy or update 
+
+```
+
 
 ## 2. Epinio - Lightweight Kubernetes-native PaaS
 
