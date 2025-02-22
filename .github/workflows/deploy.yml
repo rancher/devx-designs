@@ -7,6 +7,10 @@ on:
     paths-ignore:
       - '**/README.md'
 
+defaults:
+  run:
+    working-directory: docs
+
 jobs:
   build:
     name: Build Docusaurus
@@ -17,8 +21,9 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: yarn
+          cache-dependency-path: docs/yarn.lock
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -30,7 +35,7 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: docs/build
 
   deploy:
     name: Deploy to GitHub Pages
@@ -49,3 +54,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        publish_dir: docs/build
