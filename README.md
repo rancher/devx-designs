@@ -63,9 +63,9 @@ Application Collection or the SUSE Registry.
 ```mermaid
 sequenceDiagram
     actor pe as Platform Eng 
-    participant reg as "SUSE Private Registry"
-    participant appco as "SUSE Application Collection"
-    participant sr as "SUSE Registry"
+    participant reg as SUSE Private Registry
+    participant appco as SUSE Application Collection
+    participant sr as SUSE Registry
     %% participant git as "Gitea"
     %% participant act as "Gitea Action" 
     reg<<->>appco: mirror approved images
