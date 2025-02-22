@@ -10,14 +10,14 @@ Here's a brief introduction on how to build and display the docs locally during 
 
 The docs are built with [Docusaurus](https://docusaurus.io/) build with Node.js.
 
-To avoid package locks nightmare, `npm` will be used (instead of `yarn` or `pnpm`).
+To avoid package locks nightmare, `yarn` will be used (instead of `npm` or `pnpm`).
 
 ### Modules install
 
 Before using Docusaurus, the module needs to be installed with:
 
 ```shell
-npm install
+yarn install
 ```
 
 ## Writing docs
@@ -51,7 +51,7 @@ Docusaurus has several built-in Markdown enhancements, so it's better to display
 To display the docs, in a terminal run:
 
 ```shell
-npm run start
+yarn start
 ```
 
 Once the changes are saved, the terminal should display the docs have been compiled successfully and the web page should be reloaded automatically (if not, reload the page manually).
@@ -65,7 +65,7 @@ Once the changes are saved, the terminal should display the docs have been compi
 Once all the changes are done, build the docs to ensure there's no errors (i.e. broken links):
 
 ```shell
-npm run build
+yarn build
 ```
 
 If the build is successful, commit the changes.
