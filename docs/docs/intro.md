@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+slug: /
+---
+
 # SUSE DevEx Designs
 
 This repository contains designs, documentation, automation scripts, and other
