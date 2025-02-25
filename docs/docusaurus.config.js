@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'SUSE DevEx Designs',
+  title: 'SUSE DevX Designs',
   tagline: 'SUSE Developer Experience',
   favicon: 'img/favicon.ico',
 
@@ -68,9 +68,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'SUSE DevEx Designs',
+        title: 'SUSE DevX Designs',
         logo: {
-          alt: 'SUSE DevEx Designs',
+          alt: 'SUSE DevX Designs',
           src: 'img/logo.png',
         },
         items: [

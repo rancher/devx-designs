@@ -1,4 +1,4 @@
-# SUSE DevEx Designs
+# SUSE DevX Designs
 
 This repository contains designs, documentation, automation scripts, and other
 code artifacts for validated designs for end-to-end software development on SUSE
@@ -10,7 +10,7 @@ Some designs will use all SUSE components, others will rely on SUSE partner
 solutions, and some will be a combination. 
 
 Discussion about this initiative is currently happening in the
-[#proj-devex](https://app.slack.com/client/T02863RC2AC/C088797UWCA) Slack
+[#proj-devx](https://app.slack.com/client/T02863RC2AC/C088797UWCA) Slack
 channel (SUSE internal).
 
 ## 1. GitAppOps - A composable, customizable, Git-centered workflow 

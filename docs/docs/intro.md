@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# SUSE DevEx Designs
+# SUSE DevX Designs
 
 This repository contains designs, documentation, automation scripts, and other
 code artifacts for validated designs for end-to-end software development on SUSE
