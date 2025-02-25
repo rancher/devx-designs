@@ -23,7 +23,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'rancherlabs', // Usually your GitHub org/user name.
-  projectName: 'devex-designs', // Usually your repo name.
+  projectName: 'devx-designs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -81,7 +81,7 @@ const config = {
             label: 'Documentation',
           },
           {
-            href: 'https://github.com/rancherlabs/devex-designs',
+            href: 'https://github.com/rancherlabs/devx-designs',
             label: 'GitHub',
             position: 'right',
           },
