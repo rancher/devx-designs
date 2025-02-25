@@ -15,7 +15,7 @@ Some designs will use all SUSE components, others will rely on SUSE partner
 solutions, and some will be a combination. 
 
 Discussion about this initiative is currently happening in the
-[#proj-devex](https://app.slack.com/client/T02863RC2AC/C088797UWCA) Slack
+[#proj-devx](https://app.slack.com/client/T02863RC2AC/C088797UWCA) Slack
 channel (SUSE internal).
 
 ## 1. GitAppOps - A composable, customizable, Git-centered workflow 
