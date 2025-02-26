@@ -5,32 +5,33 @@ slug: /
 
 # SUSE DevX Designs
 
-This repository contains designs, documentation, automation scripts, and other
-code artifacts for validated designs for end-to-end software development on SUSE
-Rancher Prime. These designs will focus on developer ease of use, build and
-deployment automation, security, and maintainability composed of SUSE Rancher
-Prime components.
+This repository contains documentation, automation scripts, and other code
+artifacts for validated designs enabling end-to-end software development on SUSE
+Rancher Prime. These designs focus on developer ease of use, build automation,
+continuous deployment, security, and maintainability. 
 
-Some designs will use all SUSE components, others will rely on SUSE partner
-solutions, and some will be a combination. 
+Some designs will use SUSE Rancher Prime components, while others will
+incorporate features available from SUSE certified partners. 
 
-Discussion about this initiative is currently happening in the
-[#proj-devx](https://app.slack.com/client/T02863RC2AC/C088797UWCA) Slack
-channel (SUSE internal).
+Discussion about this initiative is currently happening in the SUSE 
+[#proj-devx](https://app.slack.com/client/T02863RC2AC/C088797UWCA) Slack channel
+(internal), but will expand to the wider SUSE Rancher community at and
+after SUSECON 2025.
 
 ## 1. GitAppOps - A composable, customizable, Git-centered workflow 
 
-The first design (name TBD) is highly customizable but requires project-specific
-configuration for each application. It makes the IDE and Git UI the center of the
-Application Developer's experience. Build and deployment automation is managed
-by Platform Engineers.
+The first design is highly customizable but requires project-specific
+configuration for each application. It makes the IDE and Git UI the center of
+the Application Developer's experience. Build and deployment automation is
+managed by Platform Engineers.
 
 ```mermaid
 flowchart LR
     Dev((Developer))
     --> VSC("VS Code /
     Dev Containers") 
-    o--o RD(Rancher Desktop)
+    o--o RD("Rancher Desktop / 
+            docker + k3s")
     VSC --> GT("Gitea")
         --> GHA(Gitea Actions)
         --> SPR[("SUSE 
