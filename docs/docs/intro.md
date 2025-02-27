@@ -32,7 +32,6 @@ flowchart LR
     Dev Containers") 
     o--o RD("Rancher Desktop / 
             docker + k3s")
-    Dev <--> IDP("Backstage")
     VSC --> GT("Gitea")
         --> GHA(Gitea Actions)
         --> SPR[("SUSE 
@@ -41,6 +40,9 @@ flowchart LR
 
     Dev --> CD("Coder /
     Workspaces") --> GT
+    Dev <--> IDP("Backstage")
+    IDP <--> GT
+    IDP <--> CD
 
     %% VSC --> GH("Github")
     %% CD --> GH
