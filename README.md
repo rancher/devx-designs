@@ -1,4 +1,4 @@
-# SUSE DevX Designs
+# SUSE DevX validated designs
 
 This repository contains designs, documentation, automation scripts, and other
 code artifacts for validated designs for end-to-end software development on SUSE
