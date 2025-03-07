@@ -1,3 +1,9 @@
+---
+id: gitops-devcontainers
+sidebar_position: 20
+# slug: /1-Rancher-GitOps/DevContainers
+---
+
 # SUSE Dev Containers
 
 [Development Containers](https://containers.dev/) (AKA Dev Containers) are
@@ -112,7 +118,34 @@ the one above and an adjacent `devcontainer.json`:
 }
 ```
 
+Images can be built locally by a Platform Engineer, then pushed to an OCI
+registry residing on the target cluster (e.g. SUSE Private Registry or Harbor).
+This has a few benefits:
+
+1. images are under the control of the Platform Engineering team
+2. images are kept local to hosted workspaces, actions, and build systems that rely on them
+3. developers do not need to build the dev containers themselves
+
+The version of `.devcontainers/devcontainers.json` committed to the platfom
+would reference the local OCI registry:
+
+```json
+{
+  "name": "Node.js",
+  image": "intreg.example.com/project/workspace-nodejs:22-dev"
+  },
+  ...
+}
+```
+
+
+
+
 ### Automating updates
 
+Container images should always be pinned to a specific version or build. SDK and
+runtime images from SUSE Application Collection do not expose a `latest` tag to
+enforce this practice.  
 
-## Project setup
+Package updates are published in the SUSE Application Collection [RSS feed](https://apps.rancher.io/feed), and can be checked for individual artifacts via the [REST API](https://api.apps.rancher.io/swagger-ui/index.html). 
+

@@ -1,7 +1,3 @@
----
-sidebar_position: 100
----
-
 # How to use the docs
 
 Here's a brief introduction on how to build and display the docs locally during the writing
