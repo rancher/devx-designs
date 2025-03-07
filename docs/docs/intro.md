@@ -23,7 +23,7 @@ after SUSECON 2025.
 
 ### A composable, customizable, Git-centered workflow
 
-[GitOps for Rancher](Rancher-GitOps/overview.md) is a highly customizable
+[GitOps for Rancher](gitops-overview.md) is a highly customizable
 workflow, but requires project-specific configuration for each application. It
 makes the IDE and Git UI the center of the Application Developer's experience.
 Build and deployment automation is managed by Platform Engineers.
