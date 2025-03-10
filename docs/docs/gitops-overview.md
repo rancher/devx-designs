@@ -12,19 +12,29 @@ managed by Platform Engineers.
 
 ```mermaid
 flowchart LR
+
     Dev((Developer))
     --> VSC("VS Code /
     Dev Containers") 
     o--o RD("Rancher Desktop / 
             docker + k3s")
-    VSC --> GT("Gitea")
-        --> GHA(Gitea Actions)
+    RD o--o SPR
+    VSC --> GT("Gitea /
+            GitLab")
+        Dev --> CD("Coder /
+        Workspaces") 
+    subgraph RancherPrime["Dev Platform"]
+        CD --> GT --> GHA(Git* Action Runner)
         --> SPR[("SUSE 
         Private Registry")] <--> FLT(Fleet)
-        --> RKE2(RKE2)
+        CD o--o SPR
+    end
+        subgraph PROD[Prod Platform]
+            FLT --> NODE1(RKE2)
+            FLT --> NODE2(RKE2)
+            FLT --> NODE3(RKE2)
+        end
 
-    Dev --> CD("Coder /
-    Workspaces") --> GT
 
     %% VSC --> GH("Github")
     %% CD --> GH
