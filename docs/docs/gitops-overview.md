@@ -18,15 +18,18 @@ flowchart LR
     Dev Containers") 
     o--o RD("Rancher Desktop / 
             docker + k3s")
-    VSC --> GT("Gitea")
+    RD o--o SPR
+    VSC --> GT("Gitea /
+            GitLab")
         Dev --> CD("Coder /
         Workspaces") 
-    subgraph RancherPrime
-        CD --> GT --> GHA(Gitea Actions)
+    subgraph RancherPrime["Dev Platform"]
+        CD --> GT --> GHA(Git* Action Runner)
         --> SPR[("SUSE 
         Private Registry")] <--> FLT(Fleet)
+        CD o--o SPR
     end
-        subgraph RKE2
+        subgraph PROD[Prod Platform]
             FLT --> NODE1(RKE2)
             FLT --> NODE2(RKE2)
             FLT --> NODE3(RKE2)
