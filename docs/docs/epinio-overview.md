@@ -15,7 +15,7 @@ When installed with Rancher Prime, it provides a different path through the
 developer-facing portion of the application delivery workflow, but can be tied in to the overall structure of [GitOps for Rancher](gitops-overview.md).
 
 Developed originally by SUSE, Epinio is now maintained and supported by
-[Krumware](https://krum.io) in partnership with SUSE. This design provides a UI
+[Krumware](https://www.krum.io) in partnership with SUSE. This design provides a UI
 and API specifically for app developers (independent of the source code control
 used).
 

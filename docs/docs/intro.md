@@ -75,6 +75,6 @@ from SUSE Registry and SUSE Application Collection.
 ### Lightweight Kubernetes-native PaaS
 
 [Epinio](https://epinio.io/) is now developed, maintained and supported by
-[Krumware](https://krum.io) in partnership with SUSE. This design provides a UI
+[Krumware](https://www.krum.io) in partnership with SUSE. This design provides a UI
 and API specifically for app developers (independent of the source code control
 used).
