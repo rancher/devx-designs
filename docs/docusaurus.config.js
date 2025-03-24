@@ -80,11 +80,11 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {
-            href: 'https://github.com/rancherlabs/devx-designs',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/rancherlabs/devx-designs',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
