@@ -30,12 +30,13 @@ Build and deployment automation is managed by Platform Engineers.
 
 ```mermaid
 flowchart LR
-
     Dev((Developer))
     --> VSC("VS Code /
     Dev Containers") 
     o--o RD("Rancher Desktop / 
             docker + k3s")
+    Dev <--> SO
+    Dev <--> SS
     RD o--o SPR
     VSC --> GT("Gitea /
             GitLab")
@@ -47,11 +48,19 @@ flowchart LR
         Private Registry")] <--> FLT(Fleet)
         CD o--o SPR
     end
-        subgraph PROD[Prod Platform]
-            FLT --> NODE1(RKE2)
-            FLT --> NODE2(RKE2)
-            FLT --> NODE3(RKE2)
-        end
+    SO["SUSE Observability"] <--> TEST
+    SS["SUSE Security"] <--> TEST 
+    FLT --> TEST
+    %% FLT --> PROD 
+
+    %% subgraph PROD[Prod Platform]
+    %%     NODE1(RKE2)
+    %%     NODE2(RKE2)
+    %% end
+    subgraph TEST[Testing/Staging]
+        NODE3(RKE2)
+        --> NODE4(RKE2)
+    end
 
 
     %% VSC --> GH("Github")
