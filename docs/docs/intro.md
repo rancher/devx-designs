@@ -42,7 +42,7 @@ flowchart LR
             GitLab")
         Dev --> CD("Coder /
         Workspaces") 
-    subgraph RancherPrime["Dev Platform"]
+    subgraph RancherPrime["Development"]
         CD --> GT --> GHA(Git* Action Runner)
         --> SPR[("SUSE 
         Private Registry")] <--> FLT(Fleet)
@@ -57,9 +57,10 @@ flowchart LR
     %%     NODE1(RKE2)
     %%     NODE2(RKE2)
     %% end
-    subgraph TEST[Testing/Staging]
+    subgraph TEST[Deployment]
+        NODE1(RKE2)
+        NODE2(RKE2)
         NODE3(RKE2)
-        --> NODE4(RKE2)
     end
 
 
