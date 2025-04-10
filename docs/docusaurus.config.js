@@ -15,14 +15,14 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://rancherlabs.github.io',
+  url: 'https://rancher.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/devx-designs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'rancherlabs', // Usually your GitHub org/user name.
+  organizationName: 'rancher', // Usually your GitHub org/user name.
   projectName: 'devx-designs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -81,7 +81,7 @@ const config = {
             label: 'Documentation',
           },
           // {
-          //   href: 'https://github.com/rancherlabs/devx-designs',
+          //   href: 'https://github.com/rancher/devx-designs',
           //   label: 'GitHub',
           //   position: 'right',
           // },
