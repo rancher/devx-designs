@@ -12,40 +12,36 @@ managed by Platform Engineers.
 
 ```mermaid
 flowchart LR
-
     Dev((Developer))
-    --> VSC("VS Code /
+    --> VSC("VS Code &
     Dev Containers") 
-    o--o RD("Rancher Desktop / 
-            docker + k3s")
+    o--o RD("Rancher Desktop
+            (docker + k3s)")
+    Dev <--> SO
+    Dev <--> SS
     RD o--o SPR
-    VSC --> GT("Gitea /
+    VSC --> GT("Gitea or
             GitLab")
         Dev --> CD("Coder /
         Workspaces") 
-    subgraph RancherPrime["Dev Platform"]
+    subgraph "Development"
         CD --> GT --> GHA(Git* Action Runner)
         --> SPR[("SUSE 
         Private Registry")] <--> FLT(Fleet)
         CD o--o SPR
     end
-        subgraph PROD[Prod Platform]
-            FLT --> NODE1(RKE2)
-            FLT --> NODE2(RKE2)
-            FLT --> NODE3(RKE2)
-        end
+    SO["SUSE Observability"] <--> Deployment 
+    SS["SUSE Security"] <--> Deployment 
+    FLT --> Deployment 
 
+    subgraph "Deployment"
+        NODE1(RKE2)
+        NODE2(RKE2)
+        NODE3(RKE2)
+    end
 
-    %% VSC --> GH("Github")
-    %% CD --> GH
-    %% GH --> GHA
-
-    %% VSC --> GL("Gitlab")
-    %% CD --> GL
-    %% GL --> GHA
-
-    BCI[(SUSE Registry)] --> SPR
-    AC[(SUSE AppCo)] --> SPR
+    AC[(SUSE Registry &
+    Application Collection)] --> SPR
 ```
 
 All container images / OCI artifacts can be stored centrally by the organization
@@ -69,8 +65,8 @@ sequenceDiagram
     participant sr as SUSE Registry
     %% participant git as "Gitea"
     %% participant act as "Gitea Action" 
-    reg<<->>appco: mirror approved images
-    reg<<->>sr: mirror approved images
+    appco->>reg: mirror approved images
+    sr->>reg: mirror approved images
 ```
 
 ## App Project Setup
@@ -89,7 +85,7 @@ environment running in a pre-configured container, right from their IDE.
 ```mermaid
 sequenceDiagram
     actor dev as Dev Lead
-    participant git as Gitea
+    participant git as Gitea / Gitlab
     participant rd as Rancher Desktop
     participant reg as SUSE Private Registry
     %% participant act as Gitea Action 
@@ -134,8 +130,8 @@ sequenceDiagram
     actor dev as Developer
     participant ide as IDE
     participant rd as Rancher Desktop
-    participant git as Gitea
-    participant act as Gitea Action 
+    participant git as Gitea / Gitlab
+    participant act as Git* Action 
     participant reg as SUSE Private Registry
     %% participant appco as SUSE Application Collection
     %% participant sr as SUSE Registry
