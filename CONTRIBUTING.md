@@ -15,22 +15,23 @@ program](https://www.suse.com/partners/become-partner/).
 
 A DevX Validated Design should:
 * describe in detail how to construct a repeatable software delivery workflow
+* include configuration, templates, or automation code to assist in setting up the platform
 * be built around software supported by SUSE, primarily [SUSE Rancher
   Prime](https://www.rancher.com/products/rancher-platform)
 * optionally include software from [SUSE
   partners](https://www.suse.com/pcsc/home#search?platforms=1027) that adds
   features to the developer workflow or improves usability
-* ideally use open source software components, so that these models can be used
+* ideally, use open source software components so that these models can be used
   by the wider community
 
 ## Supporting your stack
 
 System Integrator and consulting partners should submit designs that they are
-prepared to support the design for customers. 
+prepared to support commercially for customers. 
 
-ISV partners submitting designs that include their software should be able to
-support customers who implement the design, and keep any integrations in the
-design up-to-date and tested.
+ISV partners submitting designs which include their software should be able to
+support design for their customers and keep any integrations in the design
+up-to-date and tested.
 
 SUSE supports the SUSE software components included in these designs for
 customers with valid support subscriptions. 
