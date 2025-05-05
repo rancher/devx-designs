@@ -77,10 +77,3 @@ If you forgot to do this and have not yet pushed your changes to the remote
 repository, you can amend your commit with the sign-off by running 
 
     git commit --amend -s 
-
-## Discuss DevX!
-
-If you'd like to discuss the designs in this repo, talk about a proposed
-addition, or talk about developer platform engineering in general, join us in
-the [#devx channel](https://app.slack.com/client/T3AU9F5MG/C08QXJ3BYJW) in the
-[Rancher Users Slack](https://rancher-users.slack.com/).
