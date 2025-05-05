@@ -1,6 +1,6 @@
 # Contributing Guide
 
-This repository welcomes contributions from platform engineers and architects
+This project welcomes contributions from platform engineers and architects
 who would like to help expand and improve DevX Validated Designs by SUSE. 
 
 The initial intent of this repository is to facilitate collaboration between
@@ -30,7 +30,7 @@ System Integrator and consulting partners should submit designs that they are
 prepared to support commercially for customers. 
 
 ISV partners submitting designs which include their software should be able to
-support design for their customers and keep any integrations in the design
+support the design for their customers and keep all integrations in the design
 up-to-date and tested.
 
 SUSE supports the SUSE software components included in these designs for
@@ -43,7 +43,8 @@ documentation or code:
 
 * Documentation in this repository is licensed under the [Creative Commons
   Attribution 4.0 International License](docs/LICENSE).
-* Code in this repository is licensed under the [Apache-2.0](LICENSE).
+* Code in this repository outside of the `docs` directory is licensed under the
+  [Apache-2.0](LICENSE).
 
 ## Issues & Pull requests
 
@@ -79,4 +80,7 @@ repository, you can amend your commit with the sign-off by running
 
 ## Discuss DevX!
 
-DevX Designs discussion channel coming soon to [https://rancher-users.slack.com/].
+If you'd like to discuss the designs in this repo, talk about a proposed
+addition, or talk about developer platform engineering in general, join us in
+the [#devx channel](https://app.slack.com/client/T3AU9F5MG/C08QXJ3BYJW) in the
+[Rancher Users Slack](https://rancher-users.slack.com/).
