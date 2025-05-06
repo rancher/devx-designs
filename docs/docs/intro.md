@@ -26,40 +26,36 @@ Build and deployment automation is managed by Platform Engineers.
 
 ```mermaid
 flowchart LR
-
     Dev((Developer))
-    --> VSC("VS Code /
+    --> VSC("VS Code &
     Dev Containers") 
-    o--o RD("Rancher Desktop / 
-            docker + k3s")
+    o--o RD("Rancher Desktop
+            (docker + k3s)")
+    Dev <--> SO
+    Dev <--> SS
     RD o--o SPR
-    VSC --> GT("Gitea /
+    VSC --> GT("Gitea or
             GitLab")
         Dev --> CD("Coder /
         Workspaces") 
-    subgraph RancherPrime["Dev Platform"]
+    subgraph "Development"
         CD --> GT --> GHA(Git* Action Runner)
         --> SPR[("SUSE 
         Private Registry")] <--> FLT(Fleet)
         CD o--o SPR
     end
-        subgraph PROD[Prod Platform]
-            FLT --> NODE1(RKE2)
-            FLT --> NODE2(RKE2)
-            FLT --> NODE3(RKE2)
-        end
+    SO["SUSE Observability"] <--> Deployment 
+    SS["SUSE Security"] <--> Deployment 
+    FLT --> Deployment 
 
+    subgraph "Deployment"
+        NODE1(RKE2)
+        NODE2(RKE2)
+        NODE3(RKE2)
+    end
 
-    %% VSC --> GH("Github")
-    %% CD --> GH
-    %% GH --> GHA
-
-    %% VSC --> GL("Gitlab")
-    %% CD --> GL
-    %% GL --> GHA
-
-    BCI[(SUSE Registry)] --> SPR
-    AC[(SUSE AppCo)] --> SPR
+    AC[(SUSE Registry &
+    Application Collection)] --> SPR
 ```
 
 All container images / OCI artifacts can be stored centrally by the organization
