@@ -46,6 +46,10 @@ documentation or code:
 * Code in this repository outside of the `docs` directory is licensed under the
   [Apache-2.0](LICENSE).
 
+Add the appropriate [SPDX license identifier](https://spdx.dev/learn/handling-license-info/) in a comment at the top of each file you contribute. For instance:
+* `SPDX-License-Identifier: CC-BY-4.0` for Creative Commons-licensed content
+* `SPDX-License-Identifier: Apache-2.0` for Apache-licensed code
+
 ## Issues & Pull requests
 
 Prior to creating a pull request it is a good idea to [create an issue].
@@ -77,3 +81,4 @@ If you forgot to do this and have not yet pushed your changes to the remote
 repository, you can amend your commit with the sign-off by running 
 
     git commit --amend -s 
+
